@@ -14,3 +14,6 @@
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=mohamed-elahmady&show_icons=true&locale=en&layout=compact" alt="mohamed-elahmady" /></p>
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=mohamed-elahmady&show_icons=true&locale=en" alt="mohamed-elahmady" /></p>
+
+- name: generate-snake-game-from-github-contribution-grid
+  uses: Platane/snk@v3.3.0
