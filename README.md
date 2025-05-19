@@ -19,4 +19,3 @@ Study Computer and Systems Engineering at Zagazig University
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
 
-<img src="https://raw.githubusercontent.com/Mohamed-Elahmady/Mohamed-Elahmady/output/github-contribution-grid-snake.svg" alt="Snake animation" />
