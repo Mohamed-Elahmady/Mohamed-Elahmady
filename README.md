@@ -1,7 +1,7 @@
 <div align="center">
 
   <!-- Animated Header Wave Banner -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:004D7A,100:00F0FF&height=220&section=header&text=Mohammed%20El-Ahmady&fontSize=42&fontColor=FFFFFF&fontAlignY=38&desc=Embedded%20Systems%20%E2%80%A2%20Firmware%20Engineer%20%E2%80%A2%20Bare-Metal%20%26%20RTOS&descSize=18&descAlignY=62&descAlign=50" width="100%" alt="Mohammed El-Ahmady Banner" />
+  <img src="https://raw.githubusercontent.com/Mohamed-Elahmady/Mohamed-Elahmady/main/assets/header-banner.svg" width="100%" alt="Mohammed El-Ahmady Banner" />
 
   <!-- Animated Dynamic Typing Subtitle -->
   <a href="https://github.com/Mohamed-Elahmady">
@@ -193,7 +193,11 @@ const engineer_profile_t mohammed = {
 ### 🐍 Firmware Contribution Matrix
 
 <div align="center">
-  <img src="./assets/contribution-snake.svg" width="100%" alt="Contribution Matrix Animation" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Mohamed-Elahmady/Mohamed-Elahmady/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mohamed-Elahmady/Mohamed-Elahmady/output/github-contribution-grid-snake.svg">
+    <img alt="GitHub Contribution Snake Animation" src="https://raw.githubusercontent.com/Mohamed-Elahmady/Mohamed-Elahmady/output/github-contribution-grid-snake-dark.svg" width="100%" />
+  </picture>
 </div>
 
 ---
@@ -220,6 +224,6 @@ const engineer_profile_t mohammed = {
   </p>
 
   <!-- Animated Footer Wave -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F0FF,50:004D7A,100:0D1117&height=120&section=footer" width="100%" alt="Footer Banner" />
+  <img src="https://raw.githubusercontent.com/Mohamed-Elahmady/Mohamed-Elahmady/main/assets/footer-banner.svg" width="100%" alt="Footer Banner" />
 
 </div>
