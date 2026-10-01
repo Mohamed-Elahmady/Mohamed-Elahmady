@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180" width="100%" height="180">
+  <defs>
+    <!-- Cyber Gradients -->
+    <linearGradient id="sym-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="50%" stop-color="#7000FF"/>
+      <stop offset="100%" stop-color="#00F0FF"/>
+    </linearGradient>
+
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e17"/>
+      <stop offset="100%" stop-color="#0d1527"/>
+    </linearGradient>
+
+    <linearGradient id="rail-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00F0FF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="strong-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur1"/>
+      <feGaussianBlur stdDeviation="2" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes titleGlow {
+      0%, 100% { filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.45)); }
+      50% { filter: drop-shadow(0 0 16px rgba(0, 240, 255, 0.85)) drop-shadow(0 0 25px rgba(112, 0, 255, 0.35)); }
+    }
+    @keyframes pulseTrace {
+      0%, 100% { stroke-opacity: 0.35; }
+      50% { stroke-opacity: 0.9; }
+    }
+    @keyframes blinkStatus {
+      0%, 100% { opacity: 0.25; }
+      50% { opacity: 1; }
+    }
+    .main-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: 5px;
+      fill: #ffffff;
+      animation: titleGlow 4s ease-in-out infinite;
+    }
+    .sub-title {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      fill: #94a3b8;
+    }
+    .hud-badge {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      fill: #00F0FF;
+    }
+    .bracket-trace {
+      stroke: #00F0FF;
+      stroke-width: 1.8;
+      fill: none;
+      animation: pulseTrace 3s ease-in-out infinite;
+    }
+    .pulse-dot {
+      animation: blinkStatus 2s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Symmetric Cyberpunk Angled Base Card -->
+  <polygon points="25,2 875,2 898,25 898,155 875,178 25,178 2,155 2,25" fill="url(#bg-grad)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Symmetrical Top & Bottom Glowing Rails -->
+  <line x1="40" y1="2" x2="860" y2="2" stroke="url(#sym-grad)" stroke-width="2" filter="url(#glow)"/>
+  <line x1="40" y1="178" x2="860" y2="178" stroke="url(#sym-grad)" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Symmetrical Angled Corner Notches -->
+  <path d="M 12 36 L 12 16 L 36 16" fill="none" stroke="#00F0FF" stroke-width="2.5" filter="url(#glow)"/>
+  <path d="M 888 36 L 888 16 L 864 16" fill="none" stroke="#00F0FF" stroke-width="2.5" filter="url(#glow)"/>
+  <path d="M 12 144 L 12 164 L 36 164" fill="none" stroke="#00F0FF" stroke-width="2.5" filter="url(#glow)"/>
+  <path d="M 888 144 L 888 164 L 864 164" fill="none" stroke="#00F0FF" stroke-width="2.5" filter="url(#glow)"/>
+
+  <!-- Center Top Holographic Badge -->
+  <g transform="translate(450, 30)">
+    <rect x="-120" y="-11" width="240" height="22" rx="11" fill="#0b1329" stroke="#00F0FF" stroke-width="1" stroke-opacity="0.6" filter="url(#glow)"/>
+    <circle cx="-96" cy="0" r="3.5" fill="#00FF9D" class="pulse-dot"/>
+    <text x="-82" y="4" class="hud-badge">FIRMWARE_CORE // ACTIVE</text>
+  </g>
+
+  <!-- ================= 100% SYMMETRICAL CYBER FRAME [   ] ================= -->
+  <!-- Upper Left Bracket: starts at left edge, steps into upper corner of name -->
+  <path d="M 40 64 L 150 64 L 185 48 L 260 48" class="bracket-trace" filter="url(#glow)"/>
+  <circle cx="40" cy="64" r="3" fill="#00F0FF"/>
+  <circle cx="260" cy="48" r="3.5" fill="#00F0FF" filter="url(#glow)"/>
+  <circle r="3.5" fill="#FFFFFF" filter="url(#strong-glow)">
+    <animateMotion dur="2.8s" repeatCount="indefinite" path="M 40 64 L 150 64 L 185 48 L 260 48"/>
+  </circle>
+
+  <!-- Upper Right Bracket (EXACT MIRROR OF UPPER LEFT) -->
+  <path d="M 860 64 L 750 64 L 715 48 L 640 48" class="bracket-trace" filter="url(#glow)"/>
+  <circle cx="860" cy="64" r="3" fill="#00F0FF"/>
+  <circle cx="640" cy="48" r="3.5" fill="#00F0FF" filter="url(#glow)"/>
+  <circle r="3.5" fill="#FFFFFF" filter="url(#strong-glow)">
+    <animateMotion dur="2.8s" repeatCount="indefinite" path="M 860 64 L 750 64 L 715 48 L 640 48"/>
+  </circle>
+
+  <!-- Lower Left Bracket: starts at left edge, steps under lower-left of name -->
+  <path d="M 40 120 L 150 120 L 185 136 L 260 136" class="bracket-trace" filter="url(#glow)"/>
+  <circle cx="40" cy="120" r="3" fill="#00F0FF"/>
+  <circle cx="260" cy="136" r="3.5" fill="#00F0FF" filter="url(#glow)"/>
+  <circle r="3.5" fill="#00F0FF" filter="url(#strong-glow)">
+    <animateMotion dur="2.8s" begin="1.4s" repeatCount="indefinite" path="M 40 120 L 150 120 L 185 136 L 260 136"/>
+  </circle>
+
+  <!-- Lower Right Bracket (EXACT MIRROR OF LOWER LEFT) -->
+  <path d="M 860 120 L 750 120 L 715 136 L 640 136" class="bracket-trace" filter="url(#glow)"/>
+  <circle cx="860" cy="120" r="3" fill="#00F0FF"/>
+  <circle cx="640" cy="136" r="3.5" fill="#00F0FF" filter="url(#glow)"/>
+  <circle r="3.5" fill="#00F0FF" filter="url(#strong-glow)">
+    <animateMotion dur="2.8s" begin="1.4s" repeatCount="indefinite" path="M 860 120 L 750 120 L 715 136 L 640 136"/>
+  </circle>
+
+  <!-- ================= CENTER IDENTITY ================= -->
+  <!-- Main Name Title -->
+  <text x="450" y="98" text-anchor="middle" class="main-title">MOHAMMED EL-AHMADY</text>
+
+  <!-- Subtitle Perfectly Balanced & Centered -->
+  <text x="450" y="126" text-anchor="middle" class="sub-title">
+    <tspan fill="#00F0FF">&lt;</tspan> EMBEDDED SYSTEMS  <tspan fill="#7000FF">//</tspan>  BARE-METAL  <tspan fill="#7000FF">//</tspan>  RTOS <tspan fill="#00F0FF">&gt;</tspan>
+  </text>
+
+  <!-- Bottom Hardware Targets -->
+  <text x="450" y="156" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#64748b" letter-spacing="2">
+    [ STM32 • AVR • PIC • ESP32 • CAN / LIN / SPI / I2C ]
+  </text>
+</svg>

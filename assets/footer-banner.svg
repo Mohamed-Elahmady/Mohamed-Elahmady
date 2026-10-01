@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 60" width="100%" height="60">
+  <defs>
+    <linearGradient id="foot-sym" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="50%" stop-color="#7000FF"/>
+      <stop offset="100%" stop-color="#00F0FF"/>
+    </linearGradient>
+    <filter id="glow-foot" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes cursorBlink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .foot-hud {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      fill: #8b949e;
+    }
+    .cursor-neon {
+      animation: cursorBlink 1s infinite;
+    }
+  </style>
+
+  <!-- Symmetric Footer Card -->
+  <polygon points="20,2 880,2 898,20 898,40 880,58 20,58 2,40 2,20" fill="#0a0e17" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Top Accent Rail -->
+  <line x1="25" y1="2" x2="875" y2="2" stroke="url(#foot-sym)" stroke-width="2" filter="url(#glow-foot)"/>
+
+  <!-- Left Symmetrical Circuit & Packet -->
+  <path d="M 30 30 L 160 30 L 190 20 L 250 20" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+  <circle cx="30" cy="30" r="2.5" fill="#00F0FF"/>
+  <circle r="3" fill="#00F0FF" filter="url(#glow-foot)">
+    <animateMotion dur="2.8s" repeatCount="indefinite" path="M 30 30 L 160 30 L 190 20 L 250 20"/>
+  </circle>
+
+  <!-- Right Symmetrical Circuit & Packet (EXACT MIRROR) -->
+  <path d="M 870 30 L 740 30 L 710 20 L 650 20" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+  <circle cx="870" cy="30" r="2.5" fill="#00F0FF"/>
+  <circle r="3" fill="#00F0FF" filter="url(#glow-foot)">
+    <animateMotion dur="2.8s" repeatCount="indefinite" path="M 870 30 L 740 30 L 710 20 L 650 20"/>
+  </circle>
+
+  <!-- Terminal Center Command -->
+  <g transform="translate(450, 35)">
+    <text x="0" y="0" text-anchor="middle" class="foot-hud">
+      <tspan fill="#64748b">root@embedded:~$&#160;</tspan><tspan fill="#00FF9D">SYSTEM_HALT(0);</tspan> // READY_FOR_DEPLOY <tspan fill="#00F0FF" class="cursor-neon">_</tspan>
+    </text>
+  </g>
+</svg>

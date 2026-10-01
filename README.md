@@ -1,7 +1,7 @@
 <div align="center">
 
-  <!-- Header Banner -->
-  <img src="./assets/header-banner.png" width="100%" alt="Mohammed El-Ahmady Banner" />
+  <!-- Cyberpunk Animated Header Banner -->
+  <img src="./assets/header-banner.svg" width="100%" alt="Mohammed El-Ahmady Banner" />
 
   <!-- Animated Dynamic Typing Subtitle -->
   <a href="https://github.com/Mohamed-Elahmady">
@@ -223,7 +223,7 @@ const engineer_profile_t mohammed = {
     </a>
   </p>
 
-  <!-- Footer Banner -->
-  <img src="./assets/footer-banner.png" width="100%" alt="Footer Banner" />
+  <!-- Cyberpunk Animated Footer Banner -->
+  <img src="./assets/footer-banner.svg" width="100%" alt="Footer Banner" />
 
 </div>
